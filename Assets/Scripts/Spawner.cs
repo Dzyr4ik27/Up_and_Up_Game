@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
     private float tempYOffset;
     private float minXPos = -2f;
     private float maxXPos = 2f;
+    private GameObject cube;
 
     private void Awake() {
         tempYOffset = yOffset;
@@ -20,7 +21,7 @@ public class Spawner : MonoBehaviour {
     }
 
     IEnumerator SpawnObjects() {
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 5; ++i) {
             yield return new WaitForSeconds(spawnTime);
             SpawnOneObject();
             yOffset += tempYOffset;
@@ -29,6 +30,7 @@ public class Spawner : MonoBehaviour {
 
     public void SpawnOneObject() {
         spawnPosition = new Vector3(Random.Range(minXPos, maxXPos), yOffset, 0f);
-        Instantiate(obstacle, spawnPosition, Quaternion.identity);
+        cube = (GameObject)Instantiate(obstacle, spawnPosition, Quaternion.identity);
+        cube.transform.parent = transform;
     }
 }

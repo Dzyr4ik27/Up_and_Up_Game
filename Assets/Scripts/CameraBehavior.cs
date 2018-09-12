@@ -7,26 +7,42 @@ public class CameraBehavior : MonoBehaviour {
     public Transform target;
     private Vector3 newPosition;
     public float smoothSpeed;
+    public float moveUpSpeed;
     public float yOffset;
 
     private float cameraSize;
-    private float defaultScreenWidth = 320f;
+    private float defaultScreenWidth = 1600f;
+    private float defaultCameraSize = 5f;
 
-    // uncomment only on mobile
+    public int targetWidth = 640;
+    public float pixelsToUnits = 100f;
+
+    private Transform cameraTransform;
+
     private void Awake() {
-        //cameraSize = Screen.width / (defaultScreenWidth / Camera.main.orthographicSize);
-        //Camera.main.orthographicSize = cameraSize;
+        ScaleCamera();
+        cameraTransform = transform;
     }
 
     private void FixedUpdate() {
         SmoothFollow();
+        MoveUp();
     }
 
     public void SmoothFollow() {
-        if (target.position.y > transform.position.y - yOffset) {
-            newPosition = new Vector3(transform.position.x, target.position.y + yOffset, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, newPosition, smoothSpeed * Time.fixedDeltaTime);
+        if (target.position.y > cameraTransform.position.y - yOffset) {
+            newPosition = new Vector3(cameraTransform.position.x, target.position.y + yOffset, cameraTransform.position.z);
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition, smoothSpeed * Time.fixedDeltaTime);
         }
-        
+    }
+
+    public void ScaleCamera() {
+        int height = Mathf.RoundToInt(targetWidth / (float)Screen.width * Screen.height);
+
+        Camera.main.orthographicSize = height / pixelsToUnits / 2f;
+    }
+
+     public void MoveUp() {
+        cameraTransform.Translate(Vector3.up * moveUpSpeed * Time.fixedDeltaTime);
     }
 }

@@ -22,18 +22,16 @@ public class Movement : MonoBehaviour {
         if (upDownMovement) UpDownMove();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision) {
-    //    if (collision.collider.tag == "wall") {
-    //        sidewaySpeed *= -1;
-    //        Debug.Log("Hit");
-    //    }
-    //}
-
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.tag == "wall") {
+            sidewaySpeed *= -1;
+        }
+    }
 
     public void SidewayMove() {
-        if (transform.position.x >= rightEndPoint || transform.position.x <= leftEndPoint) {
-            sidewaySpeed *= -1f; 
-        }
+        //if (transform.position.x >= rightEndPoint || transform.position.x <= leftEndPoint) {
+        //    sidewaySpeed *= -1f;
+        //}
         transform.Translate(Vector3.right * sidewaySpeed * Time.fixedDeltaTime);
     }
 
