@@ -11,13 +11,12 @@ public class CameraBehavior : MonoBehaviour {
     public float yOffset;
 
     private float cameraSize;
-    private float defaultScreenWidth = 1600f;
-    private float defaultCameraSize = 5f;
 
     public int targetWidth = 640;
     public float pixelsToUnits = 100f;
 
-    private Transform cameraTransform;
+    [HideInInspector]
+    public Transform cameraTransform;
 
     private void Awake() {
         ScaleCamera();

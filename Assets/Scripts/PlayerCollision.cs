@@ -8,6 +8,11 @@ public class PlayerCollision : MonoBehaviour {
     public static event PlayerDelegate OnPlayerDied;
 
     private float yDiePosition = -5.5f;
+    private Transform playerTransform;
+
+    private void Awake() {
+        playerTransform = transform;
+    }
 
     private void Update() {
         DeleteObject();
@@ -23,7 +28,7 @@ public class PlayerCollision : MonoBehaviour {
     }
 
     public void DeleteObject() {
-        if (transform.position.y <= yDiePosition + FindObjectOfType<CameraBehavior>().transform.position.y) {
+        if (playerTransform.position.y <= yDiePosition + FindObjectOfType<CameraBehavior>().cameraTransform.position.y) {
             OnPlayerDied();
         }
     }

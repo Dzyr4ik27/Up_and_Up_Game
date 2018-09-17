@@ -5,14 +5,14 @@ using UnityEngine;
 public class ObjectsDelete : MonoBehaviour {
 
     public  float yDiePosition = -5.5f;
-    private Transform objectTransform;
+    private Transform objTransform;
 
     private void Awake() {
-        objectTransform = transform;
+        objTransform = transform;
     }
 
     private void Update() {
-        if (objectTransform.position.y < yDiePosition + FindObjectOfType<CameraBehavior>().transform.position.y) {
+        if (objTransform.position.y < yDiePosition + FindObjectOfType<CameraBehavior>().transform.position.y) {
             Destroy(gameObject);
         }
     }

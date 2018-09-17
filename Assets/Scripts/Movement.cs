@@ -16,6 +16,12 @@ public class Movement : MonoBehaviour {
 
     public bool upDownMovement;
 
+    private Transform objTransform;
+
+    private void Awake() {
+        objTransform = transform;
+    }
+
     private void FixedUpdate() {
         if (rotation) Rotate();
         if (sidewayMovement) SidewayMove();
@@ -32,11 +38,11 @@ public class Movement : MonoBehaviour {
         //if (transform.position.x >= rightEndPoint || transform.position.x <= leftEndPoint) {
         //    sidewaySpeed *= -1f;
         //}
-        transform.Translate(Vector3.right * sidewaySpeed * Time.fixedDeltaTime);
+        objTransform.Translate(Vector3.right * sidewaySpeed * Time.fixedDeltaTime);
     }
 
     public void Rotate() {
-        transform.Rotate(Vector3.forward * rotationSpeed * Time.fixedDeltaTime);
+        objTransform.Rotate(Vector3.forward * rotationSpeed * Time.fixedDeltaTime);
     }
 
     public void UpDownMove() {
