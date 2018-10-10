@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Obstacle
   - wall
+  - BeginLevel
+  - EndLevel
+  - Attracted
+  - SpawnWalls
+  - MoveTrig
+  - SpawnObstacles
   layers:
   - Default
   - TransparentFX
@@ -15,9 +21,9 @@ TagManager:
   - UI
   - 
   - 
-  - LightSources
-  - LightObstacles
-  - AmbientLight
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,4 +48,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 714205653
+    locked: 0
+  - name: Monsters
+    uniqueID: 1168120147
+    locked: 0
+  - name: Obstacles
+    uniqueID: 333377161
+    locked: 0
+  - name: Walls
+    uniqueID: 112313033
+    locked: 0
+  - name: Player
+    uniqueID: 2080150035
     locked: 0

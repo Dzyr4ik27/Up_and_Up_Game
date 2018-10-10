@@ -7,14 +7,21 @@ public class Movement : MonoBehaviour {
     private RaycastHit hit;
 
     public bool sidewayMovement;
+    public bool moveToPoints;
+
     public float sidewaySpeed;
-    public float leftEndPoint;
     public float rightEndPoint;
+    public float leftEndPoint;
  
     public bool rotation;
     public float rotationSpeed;
 
     public bool upDownMovement;
+    public float speed;
+    public float upEndPoint;
+    public float downEndPoint;
+
+    public bool needToStop;
 
     private Transform objTransform;
 
@@ -32,21 +39,31 @@ public class Movement : MonoBehaviour {
         if (collision.collider.tag == "wall") {
             sidewaySpeed *= -1;
         }
+        if (needToStop) {
+            sidewaySpeed = 0f;
+        }
     }
 
+
     public void SidewayMove() {
-        //if (transform.position.x >= rightEndPoint || transform.position.x <= leftEndPoint) {
-        //    sidewaySpeed *= -1f;
-        //}
-        objTransform.Translate(Vector3.right * sidewaySpeed * Time.fixedDeltaTime);
+        if (moveToPoints) {
+            if (objTransform.localPosition.x >= rightEndPoint || objTransform.localPosition.x <= leftEndPoint) {
+                sidewaySpeed = needToStop ? 0f : -sidewaySpeed;
+            }
+        }
+        objTransform.Translate(Vector3.right * sidewaySpeed * Time.deltaTime);
     }
 
     public void Rotate() {
-        objTransform.Rotate(Vector3.forward * rotationSpeed * Time.fixedDeltaTime);
+        objTransform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 
     public void UpDownMove() {
-
+        if (objTransform.localPosition.y >= upEndPoint || objTransform.localPosition.y <= downEndPoint) {
+            //upDownSpeed *= -1f;
+            speed = needToStop ? 0f : -speed;
+        }
+        objTransform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
     

@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_7;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_9;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -50,7 +50,7 @@
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>2018.2.7f1</UnityVersion>
+    <UnityVersion>2018.2.9f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -61,86 +61,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Light2D\Examples\Scripts\Bat.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\BlockSetProfile.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\ButtonHelper.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\CameraFollower.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\ColorTweener.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\Flare.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\HingeAutoRotator.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\InputManager.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\LandingLeg.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\LightRandomizer.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\MapGenerator.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\MeshCombiner.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\MouseFollower.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\Noise.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\RocketEngine.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\RotationTweener.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\SimpleExamplesController.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\SimpleRNG.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\SortingOrderSetter.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\Spacecraft.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\SpiderLeg.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\UICustomSlider.cs" />
-    <Compile Include="Assets\Light2D\Examples\Scripts\Wisp.cs" />
-    <Compile Include="Assets\Light2D\Scripts\CustomSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystem.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystemPrefabConfig.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleGenerator.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleMesh.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Util.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
+    <Compile Include="Assets\Scripts\EchoEffect.cs" />
+    <Compile Include="Assets\Scripts\FrameRate.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\LevelsBehavior.cs" />
+    <Compile Include="Assets\Scripts\MonstersBehavior.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\ObjectsDelete.cs" />
     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\SidewayWalls.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
-    <Compile Include="Assets\Scripts\Spawner.cs" />
-    <None Include="Assets\Light2D\Resources\Shaders\FastBlur.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light70.shader" />
-    <None Include="Assets\Light2D\changelog.txt" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightIgnoreObstacles.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMap.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light9.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMappedLight.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light60.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBase.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBlender.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light1.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light50.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light80.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light20.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AmbientLightComputer.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light40.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light90.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlaySingleCamera.shader" />
-    <None Include="Assets\Light2D\Examples\Resources\Shaders\TransparentVertexColor.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlay.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentDualColorNormalMapped.shader" />
-    <None Include="Assets\Light2D\Examples\Resources\Shaders\Noise.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentNormalMapped.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AlphaReplace.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light30.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\ObstacleTexturePostProcessor.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightAuto.shader" />
+    <Compile Include="Assets\Scripts\SpawnLevels.cs" />
+    <Compile Include="Assets\Scripts\SpawnObstacles.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/New folder/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/New folder/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/New folder/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/New folder/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program_files/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -320,7 +267,7 @@
       <HintPath>D:/Program_files/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>D:/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>D:/New folder/OlderWindows/Documents2/Projects/UnityProjects/Up_And_Up_Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Program_files/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

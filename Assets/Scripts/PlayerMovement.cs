@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D PlayerRb { get { return playerRb; } set { playerRb = value; } }
     public float tapForce;
     private Vector2 jumpVector;
-    private float xJumpPos;
+    private float xJumpPos = 0.45f;
     private readonly float yJumpPos = 1f;
 
     private AudioManager audioManager;
@@ -24,33 +24,30 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         SidewayJump();
-        MouseInput();
+        //MouseInput();
     }
 
     public void SidewayJump() {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            xJumpPos = -0.45f;
-            UpJump();
+            UpJump(new Vector2(-xJumpPos, yJumpPos));
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            playerRb.velocity = Vector2.zero;
-            xJumpPos = 0.45f;
-            UpJump();
+            UpJump(new Vector2(xJumpPos, yJumpPos));
         }
     }
 
-    public void UpJump() {
-        playerRb.velocity = Vector2.zero;
-        playerRb.AddForce(new Vector2(xJumpPos, yJumpPos) * tapForce, ForceMode2D.Impulse);
+    public void UpJump(Vector2 force_vector) {
         audioManager.Play("Jump");
+        playerRb.velocity = Vector2.zero;
+        playerRb.AddForce(force_vector * tapForce, ForceMode2D.Force);
     }
 
-    public void MouseInput() {
-        if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < Screen.width / 2f) {
-            xJumpPos = -0.45f;
-            UpJump();
-        } else if (Input.GetMouseButtonDown(0) && Input.mousePosition.x > Screen.width / 2f) {
-                xJumpPos = 0.45f;
-                UpJump();
-            }
-    }
+    //public void MouseInput() {
+    //    if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < Screen.width / 2f) {
+    //        xJumpPos = -0.45f;
+    //        UpJump();
+    //    } else if (Input.GetMouseButtonDown(0) && Input.mousePosition.x > Screen.width / 2f) {
+    //            xJumpPos = 0.45f;
+    //            UpJump();
+    //        }
+    //}
 }

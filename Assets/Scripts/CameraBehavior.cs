@@ -31,7 +31,7 @@ public class CameraBehavior : MonoBehaviour {
     public void SmoothFollow() {
         if (target.position.y > cameraTransform.position.y - yOffset) {
             newPosition = new Vector3(cameraTransform.position.x, target.position.y + yOffset, cameraTransform.position.z);
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition, smoothSpeed * Time.fixedDeltaTime);
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition, smoothSpeed * Time.deltaTime);
         }
     }
 
@@ -42,6 +42,6 @@ public class CameraBehavior : MonoBehaviour {
     }
 
      public void MoveUp() {
-        cameraTransform.Translate(Vector3.up * moveUpSpeed * Time.fixedDeltaTime);
+        cameraTransform.Translate(Vector3.up * moveUpSpeed * Time.deltaTime);
     }
 }

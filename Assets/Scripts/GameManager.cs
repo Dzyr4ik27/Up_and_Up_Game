@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
+    public GameObject player;
+
+    private float timeToRestart = 2f;
 
     private void Awake() {
         if (instance == null) {
@@ -14,6 +18,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
     private void OnEnable() {
         PlayerCollision.OnPlayerDied += OnPlayerDied;
     }
@@ -23,6 +28,16 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OnPlayerDied() {
+        player.transform.GetChild(0).gameObject.SetActive(false);
+        player.transform.GetChild(1).gameObject.SetActive(false);
+        player.transform.GetChild(2).gameObject.SetActive(true);
+
+        //camera.GetComponent<CameraBehavior>().enabled = false;
+
+        Invoke("RestartLevel", timeToRestart);
+    }
+
+    public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
