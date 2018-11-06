@@ -85,11 +85,12 @@ public class SpawnLevels : MonoBehaviour {
         currentLevelLength = nextLevelLength;
     }
 
-    public float GetLevelLength(int level_index) {
+    public float GetLevelLength(int level_index) { 
         Transform levelTransform = levelsArray[level_index].transform;
+        int lastChildIndex = levelTransform.childCount - 1;
 
-        firstChildPos = levelTransform.GetChild(0).position;
-        lastChildPos = levelTransform.GetChild(levelTransform.childCount - 1).position;
+        firstChildPos = levelTransform.GetChild(lastChildIndex - 1).position;
+        lastChildPos = levelTransform.GetChild(lastChildIndex).position;
 
         return lastChildPos.y - firstChildPos.y;
     }

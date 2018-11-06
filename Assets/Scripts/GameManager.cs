@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
         player.transform.GetChild(0).gameObject.SetActive(false);
         player.transform.GetChild(1).gameObject.SetActive(false);
         player.transform.GetChild(2).gameObject.SetActive(true);
+        player.GetComponent<EchoEffect>().enabled = false;
 
         //camera.GetComponent<CameraBehavior>().enabled = false;
 

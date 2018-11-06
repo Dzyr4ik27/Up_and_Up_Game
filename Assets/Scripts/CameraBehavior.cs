@@ -6,8 +6,9 @@ public class CameraBehavior : MonoBehaviour {
 
     public Transform target;
     private Vector3 newPosition;
-    public float smoothSpeed;
+    public float smoothTime;
     public float moveUpSpeed;
+    public float moveUpTime;
     public float yOffset;
 
     private float cameraSize;
@@ -18,21 +19,53 @@ public class CameraBehavior : MonoBehaviour {
     [HideInInspector]
     public Transform cameraTransform;
 
+    private Vector3 velocity = Vector3.zero;
+
     private void Awake() {
         ScaleCamera();
         cameraTransform = transform;
     }
 
+
+    private void LateUpdate() {
+        //SmoothFollow();
+        //MoveUp();
+        //EndlessSmoothFollow();
+        //SmoothFollow();
+    }   
+
+    private void Update() {
+        //MoveUp();
+    }
+
     private void FixedUpdate() {
-        SmoothFollow();
-        MoveUp();
+        //SmoothFollow();
     }
 
     public void SmoothFollow() {
-        if (target.position.y > cameraTransform.position.y - yOffset) {
-            newPosition = new Vector3(cameraTransform.position.x, target.position.y + yOffset, cameraTransform.position.z);
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition, smoothSpeed * Time.deltaTime);
+        if (target.position.y >= cameraTransform.position.y - yOffset) {
+            Vector3 pos = cameraTransform.position;
+            pos.y = target.position.y + yOffset;
+            newPosition = pos;
+            cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, newPosition, ref velocity, smoothTime);
+        } 
+
+    }
+
+    public void SmoothFollow2() {
+        if (target.position.y >= cameraTransform.position.y - yOffset) {
+            Vector3 pos = cameraTransform.position;
+            pos.y = target.position.y + yOffset;
+            newPosition = pos;
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition, moveUpSpeed * Time.deltaTime);
         }
+    }
+
+    public void EndlessSmoothFollow() {
+        Vector3 pos = cameraTransform.position;
+        pos.y = target.position.y + yOffset;
+        newPosition = pos;
+        cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, newPosition, ref velocity, smoothTime);
     }
 
     public void ScaleCamera() {
@@ -43,5 +76,8 @@ public class CameraBehavior : MonoBehaviour {
 
      public void MoveUp() {
         cameraTransform.Translate(Vector3.up * moveUpSpeed * Time.deltaTime);
+
+        //cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, cameraTransform.position + Vector3.up * 1.5f,
+        //    ref velocity, moveUpTime);
     }
 }

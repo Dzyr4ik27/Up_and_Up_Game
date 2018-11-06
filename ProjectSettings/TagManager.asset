@@ -12,6 +12,7 @@ TagManager:
   - SpawnWalls
   - MoveTrig
   - SpawnObstacles
+  - Darkness
   layers:
   - Default
   - TransparentFX

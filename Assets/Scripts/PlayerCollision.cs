@@ -47,6 +47,11 @@ public class PlayerCollision : MonoBehaviour {
                     spawnLevels.SpawnLevel();
                     break;
                 }
+            case "Darkness": {
+                    collision.enabled = false;
+                    OnPlayerDied();
+                    break;
+                }
             case "Attracted": {
                     collision.enabled = false;
                     collision.GetComponent<Rigidbody2D>().gravityScale = 0.2f;
@@ -60,10 +65,11 @@ public class PlayerCollision : MonoBehaviour {
                 }
             case "MoveTrig": {
                     collision.enabled = false;
-                    collision.transform.parent.GetChild(0).GetComponent<Movement>().enabled = true;
+                    collision.transform.parent.GetComponent<MovementBehavior>().StartCoroutine("SetMovement");
                     break;
                 }
             case "SpawnObstacles": {
+                    collision.enabled = false;
                     collision.transform.parent.GetComponent<SpawnObstacles>().StartCoroutine("Spawn");
                     break;
                 }

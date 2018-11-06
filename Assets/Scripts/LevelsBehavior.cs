@@ -5,11 +5,9 @@ using UnityEngine;
 public class LevelsBehavior : MonoBehaviour {
 
     private Transform levelTransform;
-    public float levelSpeed;
+    private float levelLength;
 
     public float zeroYPosition;
-
-    private float levelLength;
 
     private SpawnLevels spawnLevels;
 
@@ -26,24 +24,12 @@ public class LevelsBehavior : MonoBehaviour {
     }
 
     private void Update() {
-        DeleteLevel();
-    }
-
-    private void FixedUpdate() {
-        MoveLevel();
-    }
-
-    public void MoveLevel() {
-        levelTransform.Translate(Vector2.down * levelSpeed * Time.deltaTime);
-    }
-
-
-    public void DeleteLevel() {
         if (playerTransform.position.y >= levelTransform.position.y + levelLength - zeroYPosition) {
             Destroy(gameObject);
-            //gameObject.SetActive(false);
         }
     }
+
+
 
 
 

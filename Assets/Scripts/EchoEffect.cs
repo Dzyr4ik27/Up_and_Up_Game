@@ -18,6 +18,9 @@ public class EchoEffect : MonoBehaviour  {
             GameObject obj = objectPooler.SpawnFromPool("Echo", transform.position, Quaternion.identity);
             obj.SetActive(false);
             obj.SetActive(true);
+
+            obj.transform.localScale = Vector3.one;
+
             timeBtwSpawns = startTimeBtwSpawns;
         } else {
             timeBtwSpawns -= Time.deltaTime; 

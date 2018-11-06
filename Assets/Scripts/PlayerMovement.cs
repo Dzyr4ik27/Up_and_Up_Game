@@ -12,10 +12,13 @@ public class PlayerMovement : MonoBehaviour {
     private float xJumpPos = 0.45f;
     private readonly float yJumpPos = 1f;
 
+    private bool allowMovement;
+
     private AudioManager audioManager;
 
     private void Awake() {
         playerRb = GetComponent<Rigidbody2D>();
+        allowMovement = false;
     }
 
     private void Start() {
@@ -24,13 +27,16 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         SidewayJump();
-        //MouseInput();
+        MouseInput();
     }
 
     public void SidewayJump() {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            playerRb.simulated = true;
             UpJump(new Vector2(-xJumpPos, yJumpPos));
-        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        } 
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            playerRb.simulated = true;
             UpJump(new Vector2(xJumpPos, yJumpPos));
         }
     }
@@ -41,13 +47,11 @@ public class PlayerMovement : MonoBehaviour {
         playerRb.AddForce(force_vector * tapForce, ForceMode2D.Force);
     }
 
-    //public void MouseInput() {
-    //    if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < Screen.width / 2f) {
-    //        xJumpPos = -0.45f;
-    //        UpJump();
-    //    } else if (Input.GetMouseButtonDown(0) && Input.mousePosition.x > Screen.width / 2f) {
-    //            xJumpPos = 0.45f;
-    //            UpJump();
-    //        }
-    //}
+    public void MouseInput() {
+        if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < Screen.width / 2f) {
+            UpJump(new Vector2(-xJumpPos, yJumpPos));
+        } else if (Input.GetMouseButtonDown(0) && Input.mousePosition.x >= Screen.width / 2f) {
+            UpJump(new Vector2(xJumpPos, yJumpPos));
+        }
+    }
 }
